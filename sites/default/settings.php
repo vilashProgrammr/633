@@ -224,6 +224,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
+ 
 $drupal_hash_salt = 'Bg0CwBYxQ7frsBzObXl1NV59ZUzvlCnXjzFyguJrQ5o';
 
 /**
@@ -267,6 +268,8 @@ $drupal_hash_salt = 'Bg0CwBYxQ7frsBzObXl1NV59ZUzvlCnXjzFyguJrQ5o';
  */
 ini_set('session.gc_probability', 1);
 ini_set('session.gc_divisor', 100);
+//dj:patch DJDJDJJDJDJ
+  $cookie_domain = preg_replace('/(.*)?\:.*$/', '$1', $_SERVER['HTTP_HOST']);
 
 /**
  * Set session lifetime (in seconds), i.e. the time from the user's last visit
